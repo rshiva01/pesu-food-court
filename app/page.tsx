@@ -1,10 +1,10 @@
 'use client';
 import { Chip } from '@mui/material';
-import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Login() {
   return (
-    <main className='h-screen bg-purple bg-cover sm:bg-login-page-background'>
+    <main className='h-screen overscroll-none bg-purple bg-cover sm:bg-login-page-background'>
       <header>
         {/* <img src="/images/pesuFCLogo.png" alt="Logo"/> */}
         {/* <Image src={'/images/pesuFCLogo.png'} alt='Logo' width={107} height={80}/> */}
@@ -20,7 +20,7 @@ export default function Login() {
             <form className='space-y-5 self-center'>
               <div className='flex items-center border-b border-pink py-2'>
                 <label className='text-[1.75vh] text-white'>
-                  Mobile Number:
+                  Mobile Number
                   <input
                     type='number'
                     className='mr-3 w-full border-none bg-purple bg-opacity-0 px-2 py-1 text-[1.75vh] leading-tight text-pink focus:outline-none'
@@ -52,10 +52,12 @@ export default function Login() {
                 </div>
               </div>
               <div className='px-[1.1vh]'>
-                <Chip
-                  label='Login'
-                  className='w-screen rounded-full bg-dark-pink py-[2.5vh] font-poppins text-[2.2vh] text-white'
-                />
+                <Link href={'/home'}>
+                  <Chip
+                    label='Login'
+                    className='w-screen rounded-full bg-dark-pink py-[2.5vh] font-poppins text-[2.2vh] text-white'
+                  />
+                </Link>
               </div>
             </form>
           </div>

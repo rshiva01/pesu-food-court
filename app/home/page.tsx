@@ -1,5 +1,7 @@
 import { HotelSharp, Logout, Person, ShoppingBag } from '@mui/icons-material';
 import Vendor from './components/vendors';
+import Link from 'next/link';
+import Header from '../components/header';
 
 export default function Home() {
   const vendors = [
@@ -9,25 +11,12 @@ export default function Home() {
   ];
   return (
     <main className='h-screen bg-purple'>
-      <header className='flex flex-row justify-between'>
-        <div>
-          <img src='/images/pesuFCLogo.png' className='h-[10vmin]' />
-        </div>
-        <div className='my-auto'>
-          <Logout className='mr-[2vw] text-[5vmin] text-white' />
-          <ShoppingBag className='text-[5vmin] text-white' />
-          <Person className='ml-[2vw] mr-[1.5vw] text-[5vmin] text-white' />
-        </div>
-      </header>
-      <div className='mx-[5vw] w-[90vw] sm:mt-[5vh] md:mt-[10vh]'>
+      <Header/>
+      <div className='mx-[5vw] w-[90vw] overscroll-none sm:mt-[5vh] md:mt-[10vh]'>
         <ul className='justify-between md:flex'>
-          {vendors.map((vendor) => (
+          {vendors.map((x) => (
             <div>
-              <Vendor
-                key={vendor.name}
-                name={vendor.name}
-                imagesrc={vendor.imagesrc}
-              />
+              <Vendor key={x.name} name={x.name} imagesrc={x.imagesrc} />
             </div>
           ))}
         </ul>
